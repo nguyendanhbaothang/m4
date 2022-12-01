@@ -6,10 +6,10 @@ import { Component,Input } from '@angular/core';
   styleUrls: ['./n-input.component.css']
 })
 export class NInputComponent {
-@Input('item') item:string;
-constructor(){}
-ngOnInit(): void{
-  console.log(this.item);
+  @Input('item') item:string | undefined;
+  constructor(){}
+  ngOnInit(): void{
+    console.log(this.item);
 
-}
+  }
 }

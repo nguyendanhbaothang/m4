@@ -6,8 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title:string = 'start';
+  title:string = 'Hello Angular 123';
   age:number = 19;
-  hasMoney: boolean = true;
-  book:any[] = ['Văn','Sử','Địa'];
+appComponentAnswer( event:any): void{
+  console.log('AppComponent::appComponentAnswer: '+event);
+}
 }

@@ -22,6 +22,8 @@ import { INgSwitchComponent } from './i-ng-switch/i-ng-switch.component';
 import { JNgClassComponent } from './j-ng-class/j-ng-class.component';
 import { KNgStyleComponent } from './k-ng-style/k-ng-style.component';
 import { NInputComponent } from './n-input/n-input.component';
+import { OOuputComponent } from './o-ouput/o-ouput.component';
+import { UTemplateDrivenComponent } from './u-template-driven/u-template-driven.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { NInputComponent } from './n-input/n-input.component';
     INgSwitchComponent,
     JNgClassComponent,
     KNgStyleComponent,
-    NInputComponent
+    NInputComponent,
+    OOuputComponent,
+    UTemplateDrivenComponent
   ],
   imports: [
     BrowserModule,
