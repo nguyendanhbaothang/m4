@@ -1,0 +1,3 @@
+function sum() {
+    alert("hello");
+}
