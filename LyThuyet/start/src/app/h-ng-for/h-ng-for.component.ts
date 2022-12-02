@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-h-ng-for',
@@ -6,13 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./h-ng-for.component.css']
 })
 export class HNgForComponent {
-  courses:string[] = [
-    "typescript",
-    "angular",
-    "Thắng",
+  books : any [] = [
+    'văn',
+    'su',
+    'dia'
   ];
-  constructor() {}
-  ngOnInit (): void{
-
+  // numbers: any[] = [];
+  constructor(){ }
+  ngOnInit(){
+    for (let index = 1; index <= 100; index++) {
+      this.books.push(index);
+    }
   }
 }

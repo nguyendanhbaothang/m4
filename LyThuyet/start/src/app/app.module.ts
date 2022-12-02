@@ -24,6 +24,7 @@ import { KNgStyleComponent } from './k-ng-style/k-ng-style.component';
 import { NInputComponent } from './n-input/n-input.component';
 import { OOuputComponent } from './o-ouput/o-ouput.component';
 import { UTemplateDrivenComponent } from './u-template-driven/u-template-driven.component';
+import { GameNumbersComponent } from './game-numbers/game-numbers.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { UTemplateDrivenComponent } from './u-template-driven/u-template-driven.
     KNgStyleComponent,
     NInputComponent,
     OOuputComponent,
-    UTemplateDrivenComponent
+    UTemplateDrivenComponent,
+    GameNumbersComponent
   ],
   imports: [
     BrowserModule,
