@@ -7,14 +7,12 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./u-template-driven.component.css']
 })
 export class UTemplateDrivenComponent {
-constructor(){}
-ngOnInit(): void {}
-onSubmit(value:any){
-  console.log(value);
-}
-onResetForm(formProfile: NgForm){
-  console.log(formProfile);
-  formProfile.reset();
-}
+  onSubmit(value:any){
+    console.log(value);
+  }
+  onResetForm(formProfile: NgForm){
+    console.log(formProfile);
+    formProfile.reset();
+  }
 
 }

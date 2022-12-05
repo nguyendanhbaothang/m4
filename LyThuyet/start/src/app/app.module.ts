@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -25,6 +25,7 @@ import { NInputComponent } from './n-input/n-input.component';
 import { OOuputComponent } from './o-ouput/o-ouput.component';
 import { UTemplateDrivenComponent } from './u-template-driven/u-template-driven.component';
 import { GameNumbersComponent } from './game-numbers/game-numbers.component';
+import { VDataDrivenComponent } from './v-data-driven/v-data-driven.component';
 
 @NgModule({
   declarations: [
@@ -47,12 +48,14 @@ import { GameNumbersComponent } from './game-numbers/game-numbers.component';
     NInputComponent,
     OOuputComponent,
     UTemplateDrivenComponent,
-    GameNumbersComponent
+    GameNumbersComponent,
+    VDataDrivenComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

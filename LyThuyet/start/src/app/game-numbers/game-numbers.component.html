@@ -1,10 +1,24 @@
-<p>game-numbers works!</p>
-<h1>Point: {{ point }}</h1>
-<div class="row">
-    <div class="col" *ngFor="let number of numbers; let i = index">
-        <button type="button" class="btn btn-block btn-info mb-1"
-        (click)="playGame(number)"
-        >{{ number }}</button>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <h1>Time: {{ timeleft }}</h1>
     </div>
-    
+    <div class="col-lg-6">
+      <h1>Point: {{ point }}</h1>
+    </div>
+  </div>
+
+  <div class="row" [ngStyle]="{ marginTop: '5px' }">
+    <div class="col-lg-12" [ngSwitch]="isPlayingGame">
+      <input class="btn btn-info" *ngIf="!isPlayingGame" type="button" value="Play Game" (click)="playGame()" />
+    </div>
+  </div>
+  <hr />
+  <div class="row" [ngStyle]="{marginTop: '5px'}">
+    <div class="col-lg-1" [ngStyle]="{ marginBottom: '5px'}" *ngFor="let number of numbers">
+      <input type="button" *ngIf="show" [value]="number" class="btn btn-info btn-block" [ngClass]="{
+          'btn-danger': number <= point
+        }" (click)="play(number)" />
+    </div>
+  </div>
 </div>
