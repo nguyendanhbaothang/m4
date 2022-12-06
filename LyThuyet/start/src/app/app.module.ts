@@ -26,6 +26,14 @@ import { OOuputComponent } from './o-ouput/o-ouput.component';
 import { UTemplateDrivenComponent } from './u-template-driven/u-template-driven.component';
 import { GameNumbersComponent } from './game-numbers/game-numbers.component';
 import { VDataDrivenComponent } from './v-data-driven/v-data-driven.component';
+import { ProductsComponent } from './tutorial-router/products/products.component';
+import { ProductDeleteComponent } from './tutorial-router/product-delete/product-delete.component';
+import { ProductEditComponent } from './tutorial-router/product-edit/product-edit.component';
+import { ProductAddComponent } from './tutorial-router/product-add/product-add.component';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -49,7 +57,11 @@ import { VDataDrivenComponent } from './v-data-driven/v-data-driven.component';
     OOuputComponent,
     UTemplateDrivenComponent,
     GameNumbersComponent,
-    VDataDrivenComponent
+    VDataDrivenComponent,
+    ProductsComponent,
+    ProductDeleteComponent,
+    ProductEditComponent,
+    ProductAddComponent,
   ],
   imports: [
     BrowserModule,

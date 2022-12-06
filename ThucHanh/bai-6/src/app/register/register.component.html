@@ -1,0 +1,74 @@
+<div class="container">
+  <form [formGroup]="formProfile" (ngSubmit)="onSubmitForm()" novalidate>
+    <div class="mb-3">
+      <label class="form-label">Email </label>
+      <input formControlName="email" type="email" name="email" class="form-control">
+      <div
+        *ngIf="!formProfile.controls['email']?.valid && (formProfile.controls['email']?.dirty || formProfile.controls['email']?.touched) && formProfile.controls['email'].errors?.['required']"
+        class="form-text text-danger">Không được để trống</div>
+      <div
+        *ngIf="!formProfile.controls['email']?.valid && (formProfile.controls['email']?.dirty || formProfile.controls['email']?.touched) && formProfile.controls['email'].errors?.['pattern']"
+        class="form-text text-danger">Sai định dạng</div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Password </label>
+      <input formControlName="password " name="password" type="password" #pw class="form-control">
+      <div
+        *ngIf="!formProfile.controls['password']?.valid && (formProfile.controls['password']?.dirty || formProfile.controls['password']?.touched) && formProfile.controls['password'].errors?.['required']"
+        class="form-text text-danger">Không được để trống</div>
+      <div
+        *ngIf="!formProfile.controls['password']?.valid && (formProfile.controls['password']?.dirty || formProfile.controls['password']?.touched) && formProfile.controls['password'].errors?.['minLength']"
+        class="form-text text-danger">Sai định dạng</div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label"> Confirm Password </label>
+      <input formControlName="confirmpassword" name="confirmpassword" type="password" #cpw
+        (keyup)='checkPasswords(pw.value, cpw.value)' class="form-control">
+      <div *ngIf='!passwordsMatching && isConfirmPasswordDirty' class="form-text text-danger">
+        Mật khẩu nhập chưa đúng
+      </div>
+    </div>
+    <div class="mb-3">
+      <select class="form-control" name="country" formControlName="country">
+        <option value="" disabled selected>Country</option>
+        <option *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
+      </select>
+      <div
+        *ngIf="!formProfile.controls['country']?.valid && (formProfile.controls['country']?.dirty || formProfile.controls['country']?.touched) && formProfile.controls['country'].errors?.['required']"
+        class="form-text text-danger">Không được để trống</div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label"> Age </label>
+      <input formControlName="age" name="age" type="text" class="form-control">
+      <div
+        *ngIf="!formProfile.controls['age']?.valid && (formProfile.controls['age']?.dirty || formProfile.controls['age']?.touched) && formProfile.controls['age'].errors?.['required']"
+        class="form-text text-danger">Không được để trống</div>
+      <div
+        *ngIf="!formProfile.controls['age']?.valid && (formProfile.controls['age']?.dirty || formProfile.controls['age']?.touched) && formProfile.controls['age'].errors?.['min']"
+        class="form-text text-danger">Lớn hơn 18</div>
+    </div>
+    <div class="mb-3">
+      <p>
+        <input type="radio" value="male" name="gender" formControlName="gender"> Male
+        <input type="radio" value="female" name="gender" formControlName="gender"> Female
+      </p>
+      <div
+        *ngIf="!formProfile.controls['gender']?.valid && (formProfile.controls['gender']?.dirty || formProfile.controls['gender']?.touched) && formProfile.controls['gender'].errors?.['required']"
+        class="form-text text-danger">Không được để trống</div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label"> Phone </label>
+      <input formControlName="phone" name="phone" type="text" class="form-control">
+      <div
+        *ngIf="!formProfile.controls['phone']?.valid && (formProfile.controls['phone']?.dirty || formProfile.controls['phone']?.touched) && formProfile.controls['phone'].errors?.['required']"
+        class="form-text text-danger">Không được để trống</div>
+      <div
+        *ngIf="!formProfile.controls['phone']?.valid && (formProfile.controls['phone']?.dirty || formProfile.controls['phone']?.touched) && formProfile.controls['phone'].errors?.['pattern']"
+        class="form-text text-danger">Sai định dạng</div>
+    </div>
+
+
+    <button [disabled]="!formProfile.valid" type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
