@@ -30,6 +30,12 @@ import { ProductsComponent } from './tutorial-router/products/products.component
 import { ProductDeleteComponent } from './tutorial-router/product-delete/product-delete.component';
 import { ProductEditComponent } from './tutorial-router/product-edit/product-edit.component';
 import { ProductAddComponent } from './tutorial-router/product-add/product-add.component';
+import { ProductRoutingModule } from './product1/product-routing.module';
+import { ProductModule } from './product1/product.module';
+
+
+import { RouterModule } from '@angular/router';
+
 
 
 
@@ -62,12 +68,24 @@ import { ProductAddComponent } from './tutorial-router/product-add/product-add.c
     ProductDeleteComponent,
     ProductEditComponent,
     ProductAddComponent,
+
+    AppComponent,
+    BPropertyComponent,
+
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ProductRoutingModule,
+    ProductModule,
+
+    RouterModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

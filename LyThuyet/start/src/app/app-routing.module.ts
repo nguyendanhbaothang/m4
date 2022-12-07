@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -15,10 +16,16 @@ const routes: Routes = [
     { path: 'products/:id',       component: ProductComponent },
     { path: 'products/:id/edit',  component: ProductEditComponent },
     { path: 'products/:id/delete',component: ProductDeleteComponent },
+    {
+      path: 'product',
+      loadChildren: () => import('./product1/product.module').then(module => module.ProductModule)
+    }
   ];
 
   @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes),CommonModule],
+    exports: [RouterModule],
+    declarations: [],
+
   })
   export class AppRoutingModule { }
