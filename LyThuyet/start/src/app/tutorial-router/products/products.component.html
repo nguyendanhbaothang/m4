@@ -1,6 +1,24 @@
-<p>products works!</p>
-<!-- <ul *ngIf="products">
-    <li *ngFor="let product of products ;let i = index">
-    {{ product.name }}   -  {{ product.id }}  - {{ product.price }}
-    </li>
-</ul> -->
+<div class="container">
+<a routerLink="/products/add">Thêm mới</a>
+<table class="table" border="1" >
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let product of products, let id = index">
+        <td>{{id + 1}}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
+        <td>
+            <a [routerLink]="[id+'/edit']" class="btn btn-primary">Sửa</a>
+            <a [routerLink]="[id+'/delete']" class="btn btn-danger">Xóa</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

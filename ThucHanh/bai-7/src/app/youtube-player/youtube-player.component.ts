@@ -19,7 +19,9 @@ export class YoutubePlayerComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       const id = paramMap.get('id');
-      this.song = this.songService.findSongById('id');
+      this.song = this.songService.findSongById(id);
+      console.log(this.song);
+
     });
   }
 

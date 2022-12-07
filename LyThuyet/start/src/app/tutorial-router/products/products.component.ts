@@ -17,4 +17,6 @@ export class ProductsComponent {
     console.log(this.products);
 
   }
+ 
+
 }
