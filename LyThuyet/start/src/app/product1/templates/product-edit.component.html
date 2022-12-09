@@ -4,7 +4,7 @@
           <label for="name">Name</label>
           <input
           formControlName="name"
-          type="text" class="form-control" name="name" placeholder="Name" >
+          type="text" class="form-control" value="name" name="name" placeholder="Name" >
 
           <!-- Show validate -->
           <p *ngIf="!productForm.controls['name']?.valid && (productForm.controls['name']?.dirty
@@ -19,7 +19,7 @@
           <label for="price">Price</label>
           <input
           formControlName="price"
-          type="text" class="form-control" placeholder="Price" >
+          type="text" class="form-control"  value="price" placeholder="Price" >
 
           <!-- Show validate -->
            <!-- Show validate -->
