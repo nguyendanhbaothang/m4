@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Product } from "./product";
+import { environment } from './../../environments/environment';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -7,53 +11,29 @@ export class ProductService {
   store(productData: Product) {
     throw new Error('Method not implemented.');
   }
+
   products: Product[] = [];
-  constructor() {
-    let old_products = window.localStorage.getItem('products');
-    if( !old_products ){
-    this.products = [
-      {
-        id:1,
-        name:'Iphone 7',
-        price:20000
-      },
-      {
-        id:2,
-        name:'Iphone 8',
-        price:20000
-      },
-      {
-        id:3,
-        name:'Iphone 9',
-        price:20000
-      }
-    ];
-    let stringProducts = JSON.stringify(this.products);
-    window.localStorage.setItem('products',stringProducts);
-  }else{
-    this.products = JSON.parse(old_products);
+  api_url:string = '';
+  constructor(
+    private http:HttpClient
+  ) {
+    this.api_url = environment.api_url
+  }
+  getAll():Observable<Product[]>{
+    return this.http.get<Product[]>(this.api_url);
+  }
+  find(idx:any):Observable<Product>{
+    return this.http.get<Product>(this.api_url+'/'+idx);
   }
 
-  }
-  getAll(): Product[]{
-    return this.products;
-  }
-  find(idx:any): Product{
-    return this.products[idx];
-  }
   save(product:Product){
-    this.products.push(product);
-    let stringProducts = JSON.stringify(this.products);
-    window.localStorage.setItem('products',stringProducts);
+    return this.http.post<Product>(this.api_url , product);
   }
-  update(idx:number,product:Product){
-    this.products[idx] = product;
-    let stringProducts = JSON.stringify(this.products);
-    window.localStorage.setItem('products',stringProducts);
+  update(id:number,product:Product){
+    return this.http.put<Product>(this.api_url + '/' + id, product);
   }
   destroy(idx:number){
-    this.products.splice(idx,1);
-    let stringProducts = JSON.stringify(this.products);
-    window.localStorage.setItem('products',stringProducts);
+    return this.http.delete<Product>(this.api_url + '/' + idx);
   }
+
 }

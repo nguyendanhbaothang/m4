@@ -6,6 +6,9 @@ import { ProductAddComponent } from './components/product-add.component';
 import { ProductEditComponent } from './components/product-edit.component';
 import { ProductDeleteComponent } from './components/product-delete.component';
 
+
+
+
 import { ProductRoutingModule } from './product-routing.module';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';

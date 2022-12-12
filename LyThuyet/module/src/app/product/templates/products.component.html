@@ -14,8 +14,8 @@
                 <td>{{ product.name }}</td>
                 <td>{{ product.price }}</td>
                 <td>
-                    <a [routerLink]="[idx + '/edit']" class="btn btn-primary">Edit</a>
-                    <a [routerLink]="[idx + '/delete']" class="btn btn-danger">Delete</a>
+                    <a [routerLink]="[product.id + '/edit']" class="btn btn-primary">Edit</a>
+                    <a [routerLink]="[product.id + '/delete']" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
 

@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ProductModule } from './product/product.module';
-
-
-
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
 
+
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from "./app-routing.module";
+
+import { ProductModule } from './product/product.module';
 
 @NgModule({
   declarations: [
@@ -18,13 +17,12 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    ProductModule,
+    RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule,
-  
-
+    AppRoutingModule,
+    ProductModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
