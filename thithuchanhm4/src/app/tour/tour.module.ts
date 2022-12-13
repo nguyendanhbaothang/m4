@@ -7,8 +7,6 @@ import { ToursComponent } from './components/tours.component';
 import { TourComponent } from './components/tour.component';
 import { TourRoutingModule } from './tour-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-
 @NgModule({
   declarations: [
     TourAddComponent,
@@ -22,7 +20,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     TourRoutingModule,
     FormsModule,
     ReactiveFormsModule
-
   ]
 })
 export class TourModule { }

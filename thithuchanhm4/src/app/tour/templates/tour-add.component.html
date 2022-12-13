@@ -8,11 +8,8 @@
             required
             minlength="3"
             type="text" class="form-control" name="name" placeholder="Name" >
-
-            <!-- Show validate -->
             <p *ngIf="name.invalid && (name.dirty || name.touched) && name.errors?.['required']"
             class="help-block text-danger">Name is required</p>
-
             <p *ngIf="name.invalid && (name.dirty || name.touched) && name.errors?.['minlength']"
             class="help-block text-danger">Minlength not valid</p>
         </div>
@@ -24,17 +21,12 @@
             required
             minlength="3"
             type="text" class="form-control" name="price" placeholder="Price" >
-
-            <!-- Show validate -->
-             <!-- Show validate -->
              <p *ngIf="price.invalid && (price.dirty || price.touched) && price.errors?.['required']"
              class="help-block text-danger">price is required</p>
 
              <p *ngIf="price.invalid && (price.dirty || price.touched) && price.errors?.['minlength']"
              class="help-block text-danger">Minlength not valid</p>
-
         </div>
-
         <div class="form-group">
             <label for="description">Description</label>
             <input
@@ -43,21 +35,12 @@
             required
             minlength="3"
             type="text" class="form-control" name="description" placeholder="Description" >
-
-            <!-- Show validate -->
-             <!-- Show validate -->
              <p *ngIf="description.invalid && (description.dirty || description.touched) && description.errors?.['required']"
-             class="help-block text-danger">price is required</p>
+             class="help-block text-danger">Description is required</p>
 
              <p *ngIf="description.invalid && (description.dirty || description.touched) && description.errors?.['minlength']"
              class="help-block text-danger">Minlength not valid</p>
-
         </div>
-
-
-
-
-
         <div class="form-group">
             <button type="submit" [disabled]="!formTour.valid" class="btn btn-primary">Submit</button>
             <a [routerLink]="['/']" class="btn btn-secondary">Quay lại</a>

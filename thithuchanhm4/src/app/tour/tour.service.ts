@@ -3,7 +3,6 @@ import { Tour } from './tour';
 import { environment } from './../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +10,6 @@ export class TourService {
   store(tourData: Tour) {
     throw new Error('Method not implemented.');
   }
-
   tours: Tour[] = [];
   api_url:string = '';
   constructor(

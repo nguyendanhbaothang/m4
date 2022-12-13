@@ -20,12 +20,10 @@ export class TourAddComponent {
       description: value.description,
     }
     this._TourService.save( tourData).subscribe(() => {
-      //chuyen huong ve list
       this._Router.navigate(['/tour']);
     }, (e: any) => {
       console.log(e);
     });
-    // this._ProductService.save(productData);
     this._Router.navigate(['/']);
   }
 }

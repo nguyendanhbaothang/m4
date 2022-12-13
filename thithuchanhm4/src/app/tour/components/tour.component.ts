@@ -27,7 +27,6 @@ export class TourComponent {
           this.tour = tour;
           console.log(this.tour.name);
           this.tourForm = new FormGroup({
-
             name: new FormControl(this.tour.name),
             price: new FormControl(this.tour.price),
             description: new FormControl(this.tour.description),
@@ -37,5 +36,5 @@ export class TourComponent {
 
       });
     }
-   
+
 }

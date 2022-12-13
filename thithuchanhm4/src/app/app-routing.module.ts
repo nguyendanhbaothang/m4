@@ -6,7 +6,6 @@ const routes: Routes = [{
   path: 'tour',
     loadChildren: () => import('./tour/tour.module').then(module => module.TourModule)
 }
-
 ];
 
 @NgModule({

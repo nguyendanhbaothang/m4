@@ -23,17 +23,12 @@ export class TourDeleteComponent {
        this.tour = tour;
       });
   });
-
-
   }
   handleDelete(id:any){
     this._TourService.destroy(this.id).subscribe(() => {
-      //chuyen huong ve list
       this._Router.navigate(['/tour']);
     }, (e: any) => {
       console.log(e);
     });
-    // this._ProductService.destroy(id);
-    // this._Router.navigate(['/products']);
   }
 }

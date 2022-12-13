@@ -17,7 +17,6 @@ export class TourEditComponent {
     private _Router: Router
   ) {}
   ngOnInit(): void {
-
     //lay id tu url xuong
     this._ActivatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       const id = paramMap.get('id');
@@ -41,8 +40,6 @@ export class TourEditComponent {
           ]),
         });
       });
-
-
     });
   }
   handleSubmit():void{
@@ -57,8 +54,6 @@ export class TourEditComponent {
     }, (e: any) => {
       console.log(e);
     });
-    // this._ProductService.update(this.id,productData);
-    //chuyen huong ve list
     this._Router.navigate(['/']);
 
   }

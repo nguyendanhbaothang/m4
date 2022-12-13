@@ -6,9 +6,6 @@ import { TourDeleteComponent } from './components/tour-delete.component';
 import { ToursComponent } from './components/tours.component';
 import { RouterModule, Routes } from '@angular/router';
 import { TourComponent } from './components/tour.component';
-
-
-
 const routes: Routes = [
   { path: '', component: ToursComponent },
   { path: ':id/show', component: TourComponent },
@@ -16,7 +13,6 @@ const routes: Routes = [
   { path: ':id/edit', component: TourEditComponent },
   { path: ':id/delete', component: TourDeleteComponent }
 ];
-
 @NgModule({
   declarations: [],
   imports: [

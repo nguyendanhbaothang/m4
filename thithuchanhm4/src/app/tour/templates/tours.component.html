@@ -9,7 +9,6 @@
                 <td>Action</td>
             </tr>
         </thead>
-
         <tbody>
             <tr *ngFor="let tour of tours, let idx = index">
                 <td> {{tour.id}}</td>
@@ -20,7 +19,6 @@
                     <a [routerLink]="[tour.id + '/delete']" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
-
         </tbody>
     </table>
 </div>
